@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap");
+
+body {
+  font-family: "Google Sans Code", sans-serif;
+  font-weight: 400;
+}
+
+.c-nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.c-item {
+  height: 225px;
+}
+
+.c-img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.c-fs-10px {
+  font-size: 10px;
+}
