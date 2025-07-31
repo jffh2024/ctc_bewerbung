@@ -1,0 +1,70 @@
+/* Container für das Kontaktformular */
+.contact-form-container { 
+  max-width: 600px;              /* Maximale Breite von 600px für bessere Lesbarkeit */
+  margin: 2rem auto;             /* Vertikaler Abstand 2rem, horizontal zentriert */
+  padding: 1.5rem;               /* Innenabstand rundum für Abstand zum Rand */
+  background-color: #f9f9f9;    /* Heller, fast weißer Hintergrund für den Container */
+  border-radius: 12px;           /* Abgerundete Ecken mit 12px Radius */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Tiefenwirkung */
+}
+
+/* Überschrift im Kontaktformular */
+.contact-form-container h2 {
+  text-align: center;           /* Zentrierter Text */
+  margin-bottom: 1rem;          /* Abstand unterhalb der Überschrift */
+  font-size: 1.8rem;            /* Größere Schrift für Hervorhebung */
+}
+
+/* Das Formular im Container: vertikal anordnen */
+.contact-form-container form {
+  display: flex;                /* Flexbox Layout verwenden */
+  flex-direction: column;       /* Elemente untereinander anordnen */
+  gap: 1rem;                   /* Abstand zwischen den Formularfeldern */
+}
+
+/* Beschriftungen der Eingabefelder */
+.contact-form-container label {
+  font-weight: bold;            /* Fett gedruckte Schrift für bessere Lesbarkeit */
+}
+
+/* Eingabefelder und Textarea */
+.contact-form-container input,
+.contact-form-container textarea {
+  width: 100%;                 /* Volle Breite des Containers */
+  padding: 0.7rem;             /* Innenabstand für angenehme Bedienung */
+  border: 1px solid #ccc;      /* Grauer Rahmen für Eingabefelder */
+  border-radius: 8px;          /* Leicht abgerundete Ecken */
+  font-size: 1rem;             /* Gut lesbare Schriftgröße */
+  transition: border-color 0.3s; /* Sanfter Übergang bei Farbänderung des Rahmens */
+}
+
+/* Fokus-Stil für Eingabefelder und Textarea */
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+  border-color: #0077cc;       /* Blauer Rahmen beim Fokus */
+  outline: none;               /* Standard Fokus-Outline entfernen */
+}
+
+/* Absende-Button */
+.contact-form-container button {
+  background-color: #0077cc;   /* Blaue Hintergrundfarbe */
+  color: #fff;                 /* Weißer Text */
+  padding: 0.7rem;             /* Innenabstand für besseren Klickbereich */
+  border: none;                /* Kein Rahmen */
+  border-radius: 8px;          /* Abgerundete Ecken passend zu Eingabefeldern */
+  font-size: 1rem;             /* Angenehme Schriftgröße */
+  cursor: pointer;             /* Zeigt Mauszeiger als Hand beim Hover */
+  transition: background-color 0.3s; /* Sanfter Übergang beim Hover */
+}
+
+/* Hover-Effekt für den Button */
+.contact-form-container button:hover {
+  background-color: #005fa3;   /* Dunkleres Blau beim Überfahren mit der Maus */
+}
+
+/* Bereich für Rückmeldung nach Formularabsendung */
+#formMessage {
+  margin-top: 1rem;            /* Abstand oberhalb des Elements */
+  text-align: center;          /* Zentrierter Text */
+  font-weight: bold;           /* Fett gedruckte Schrift für bessere Sichtbarkeit */
+}

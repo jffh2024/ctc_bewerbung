@@ -1,0 +1,57 @@
+.button-container {
+  display: flex;
+  flex-wrap: wrap; /* erlaubt Umbruch */
+  gap: 10px;        /* Abstand zwischen Buttons */
+  
+}
+
+/* ================== Kontakt-Button Styles ================== */
+.contact-button {
+  background-color: white;                      /* Hintergrundfarbe weiß */
+  color: rgb(6, 95, 212);                       /* Textfarbe in Blau */
+  border-color: rgb(6, 95, 212);                /* Rahmenfarbe passend zur Textfarbe */
+  border-style: solid;                          /* Rahmen durchgehend (nicht gestrichelt) */
+  border-width: 1px;                            /* Rahmenstärke 1 Pixel */
+  height: 30px;                                 /* Höhe des Buttons */
+  width: 100px;                                 /* Breite des Buttons */
+  border-radius: 2px;                           /* Leicht abgerundete Ecken */
+  cursor: pointer;                              /* Mauszeiger wird zur Hand beim Drüberfahren */
+  margin-right: 4px;                            /* Abstand rechts zum nächsten Element */
+  margin-bottom: 4px;                           /* Abstand unten */
+  transition: background-color 0.15s,           /* Sanfter Übergang der Hintergrundfarbe bei Hover (Dauer 0.15 Sekunden) */
+              color 0.15s;                       /* Sanfter Übergang der Textfarbe bei Hover */
+}
+
+/* Hover-Effekt für den Kontakt-Button */
+.contact-button:hover {
+  background-color: rgb(41, 118, 211);          /* Hintergrund wird blau, wenn Maus drüber ist */
+  color: white;                                  /* Textfarbe wird weiß */
+}
+
+/* Aktiv-Zustand (wenn Button gedrückt wird) */
+.contact-button:active {
+  opacity: 0.7;                                  /* Button wird etwas transparenter */
+}
+
+
+/* ================== About-Us-Button Styles ================== */
+.about-us-button {
+  background-color: #1d9bf0;                     /* Blauer Hintergrund */
+  color: white;                                  /* Weißer Text */
+  border: none;                                  /* Kein Rahmen */
+  border-radius: 34px;                           /* Sehr stark abgerundete Ecken - Pillenform */
+  width: 110px;                                  /* Breite */
+  height: 30px;                                  /* Höhe */
+  
+  font-weight: bold;                             /* Fettgedruckter Text */
+  font-size: 15px;                               /* Schriftgröße */
+  cursor: pointer;                               /* Mauszeiger wird zur Hand */
+  margin-right: 8px;                             /* Abstand rechts */
+  margin-bottom: 4px;                            /* Abstand unten */
+  transition: box-shadow 0. r25s;                /* Übergang für Schatten-Effekt (ACHTUNG: Schreibfehler '0. r25s' sollte '0.25s' sein) */
+}
+
+/* Hover-Effekt für den About-Us-Button */
+.about-us-button:hover {
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.55);     /* Schattierung beim Überfahren mit der Maus */
+}

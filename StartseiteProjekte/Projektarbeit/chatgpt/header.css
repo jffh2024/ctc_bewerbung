@@ -1,0 +1,118 @@
+/* ----- HEADER ----- */
+.header {
+  font-family: Arial, Helvetica, sans-serif; /* Schriftart des Headers */
+  position: sticky;                          /* Bleibt oben haften beim Scrollen */
+  width: 100%;                               /* Volle Seitenbreite */
+  background-color:  white;                   /* Weißer Hintergrund */
+  border-bottom: 1px solid var(--border-color); /* Dünner unterer Rahmen mit CSS-Variable */
+  padding: 0px;
+  box-sizing: border-box; /* Wichtig für genaues Layout-Management */
+  margin-top: -20px;
+}
+
+/* ----- NAVIGATION INNERHALB DES HEADERS ----- */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap; /* erlaubt Umbruch bei wenig Platz */
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* wird bei wenig Platz "komprimiert" */
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+
+
+
+/* ----- TOP-NAVIGATION (z. B. mit Links) ----- */
+.topnav {
+  background-color: #2d2d2d;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  border: 2px solid black;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box; /* Wichtig für genaues Layout-Management */
+}
+
+
+/* ----- LINKS IN DER TOP-NAVIGATION ----- */
+.topnav a {
+  text-decoration: none; /* Keine Unterstreichung */
+  color: white;          /* Weiße Schriftfarbe */
+}
+
+/* ----- LINKE SEKTION DER NAVIGATION ----- */
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+/* ----- LOGO ----- */
+.poipedia-logo {
+  max-width: 40%; /* Logo nimmt maximal 25% der Breite ein */
+  height: auto;   /* Höhe proportional zur Breite */
+}
+
+.left-section,
+.middle-section,
+.right-section {
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;        /* Erlaubt Schrumpfen */
+  min-width: 0;          /* wichtig für flexibles Zusammendrücken */
+}
+
+/* ----- MITTLERE SEKTION (z. B. Suchleiste) ----- */
+.middle-section {
+  flex: 1;                 /* nimmt möglichst viel Platz ein */
+  justify-content: center;
+  gap: 5px;                /* kleiner Abstand zw. Suchfeld und Button */
+  min-width: 200px;        /* nicht zu klein */
+}
+
+
+
+/* ----- SUCHFELD ----- */
+.search-bar {
+  flex: 1;                              /* Suchfeld füllt verbleibenden Platz aus */
+  padding-left: 10px;                  /* Innenabstand links für Text */
+  font-size: 1rem;                     /* Standard-Schriftgröße */
+  border: 1px solid rgb(192, 192, 192);/* Hellgrauer Rand */
+  border-radius: 2px;               /* Leicht abgerundete Ecken */         
+  min-width: 40px;            
+}
+
+/* ----- SUCHBUTTON ----- */
+.search-button {
+  background-color: var(--secondary-color);
+  border: 1px solid rgb(192, 192, 192);
+  width: 40px; /* etwas größer für besseres Klickziel */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ----- SUCHBUTTON BEI HOVER ----- */
+.search-button:hover {
+  cursor: pointer; /* Mauszeiger wird zur Hand bei Hover */
+}
+
+/* ----- ICON IM SUCHBUTTON ----- */
+.search-icon {
+  height: 20px;   /* Feste Höhe */
+ 
+}
+
+/* ----- RECHTE SEKTION DER NAVIGATION ----- */
+.right-section {
+ gap: 8px;
+flex-shrink: 1;
+}
+
+
+

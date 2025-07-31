@@ -1,0 +1,82 @@
+/* Basis-Styles für Bildschirme ab 600px Breite (kleine bis mittelgroße Geräte) */
+@media screen and (min-width: 600px) {
+    .main-nav {
+      flex-direction: column;  /* Navigation wird vertikal angeordnet */
+    }
+    
+    .pic-grid {
+      grid-template-columns: 1fr; /* Bildgitter zeigt eine Spalte */
+    }
+}
+
+/* Styles für Bildschirme ab 768px Breite (typisch Tablets oder kleine Laptops) */
+@media screen and (min-width: 768px) {
+    .main-nav {
+      flex-direction: row; /* Navigation wird horizontal angeordnet */
+    }
+    
+    .pic-grid {
+      grid-template-columns: 1fr 1fr; /* Bildgitter zeigt zwei Spalten */
+    }
+}
+
+/* Styles für große Bildschirme ab 1024px Breite (typisch Desktop-Monitore) */
+@media screen and (min-width: 1024px) {
+    .pic-grid {
+      grid-template-columns: 1fr 1fr 1fr; /* Bildgitter zeigt drei Spalten */
+    }
+}
+
+/* Styles für sehr große Bildschirme ab 1440px Breite */
+@media screen and (min-width: 1440px) {
+    .container {
+      max-width: 1400px;  /* Maximale Breite des Containers wird auf 1400px gesetzt */
+      margin: 0 auto;     /* Zentriert den Container horizontal */
+    }
+}
+
+/* Styles für Bildschirme kleiner als 1200px Breite */
+@media screen and (max-width: 1200px) {
+    .pic-grid {
+      grid-template-columns: repeat(2, 1fr); /* Bildgitter zeigt zwei Spalten */
+    }
+}
+
+/* Styles für Bildschirme kleiner als 768px Breite */
+@media screen and (max-width: 768px) {
+    .pic-grid {
+      grid-template-columns: 1fr; /* Bildgitter zeigt nur eine Spalte */
+    }
+}
+
+/* Noch ein Breakpoint bei max 768px für weitere Anpassungen */
+@media (max-width: 768px) {
+    .pic-grid {
+      grid-template-columns: 1fr; /* Bilder werden in einer Spalte angezeigt */
+    }
+    .search-bar, .search-button {
+      width: 50%; /* Suchfeld und Button werden jeweils 50% der Breite einnehmen */
+    }
+}
+
+/* Kontaktformular bei sehr kleinen Bildschirmen (max 600px Breite) */
+@media (max-width: 600px) {
+  .contact-form-container {
+    padding: 1rem; /* Innenabstand wird etwas reduziert für bessere Darstellung */
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    gap: 4px;
+  }
+
+  .nav-button {
+    padding: 4px 8px;
+    font-size: 0.9rem;
+  }
+
+  .search-bar {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,15 @@
+@media (max-width: 600px) {
+  .contact-form-container {
+    padding: 1rem;
+  }
+
+  .contact-form-container input,
+  .contact-form-container textarea {
+    font-size: 0.9rem;
+  }
+
+  .contact-form-container button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}

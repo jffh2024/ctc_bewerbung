@@ -1,0 +1,42 @@
+@media (max-width: 720px) {
+  .middle-section {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .right-section {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .search-bar {
+    font-size: 1rem;
+  }
+
+  .nav-button {
+    padding: 4px 8px;
+    font-size: 0.9rem;
+  }
+
+  .main-nav {
+    gap: 6px;
+  }
+}
+
+/*=========================*/
+
+@media (max-width: 600px) {
+  .search-bar {
+    font-size: 0.9rem; /
+  }
+}
+
+/*=========================*/
+
+@media (max-width: 400px) {
+  .search-bar {
+    font-size: 0.85rem; 
+  }
+}

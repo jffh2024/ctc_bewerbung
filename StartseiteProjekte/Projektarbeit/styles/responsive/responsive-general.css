@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+  h1, h2, h3 {
+    font-size: 90%;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

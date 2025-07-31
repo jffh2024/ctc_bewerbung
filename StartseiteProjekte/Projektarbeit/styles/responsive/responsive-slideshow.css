@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+  .slideshow-wrapper {
+    padding: 0 10px;
+  }
+
+  .slide-content {
+    padding: 10px;
+  }
+
+  .text {
+    font-size: 14px;
+    padding: 6px;
+  }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+
+<html lang="de">
+
+
+<head>
+ 
+
+    <title>PoiPedia</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Responsives Verhalten. -->
+
+    <meta charset="utf-8">
+    <!-- Sorgt dafür, dass Buchstaben die Kodierung utf-8 damit Sonderzeichen 
+     angezeigt werden können (hier wichtig ä, ö, ü ß)-->
+     
+    <!-- ==================== CSS-STYLESHEETS ==================== -->
+
+    <!--================GEWÖHNLICHE CSS-STYLESHEETS ============== -->
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css"> <!-- Spezifisches Styling für den Header/Navigationsbereich -->
+    <link rel="stylesheet" href="styles/index.css"> <!-- Styling für die Startseite (z. B. Einleitung, Bilder-Grid) -->
+    <link rel="stylesheet" href="styles/contact.css">
+    <!--====================Responsive CSS======================== -->
+     <link rel="stylesheet" href="styles/responsive/responsive-header.css">
+    <link rel="stylesheet" href="styles/responsive/responsive-grid.css">
+    <link rel="stylesheet" href="styles/responsive/responsive-general.css">
+    <link rel="stylesheet" href="styles/responsive/responsive-contact.css">
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+
+    <script src="scripts/google-suche.js" defer></script>
+    <!-- JavaScript-Datei für die Google-Suchfunktion. 'defer' bedeutet, dass das Skript erst geladen wird, wenn das HTML vollständig geparst ist. -->
+    <script src="scripts/contact.js" defer></script>
+</head>
+
+
+<body>
+    <!-- Der sichtbare Inhalt der Website beginnt hier. -->
+
+    <!-- ==================== HEADER / NAVIGATION ==================== -->
+    <header class="header">
+        <!-- Oberer Seitenbereich – enthält Navigation und Logo -->
+
+        <nav class="topnav">
+            <!-- Horizontale Navigation am oberen Rand -->
+            <a href="index.htm">Startseite</a>
+            <a href="javascript.htm">JavaScript</a>
+            <a href="slideshow.htm">SlideShow</a>
+        </nav>
+
+        <nav class="main-nav">
+            <!-- Flexbox-Bereich mit drei Sektionen: links (Logo), Mitte (Suchfeld), rechts (Buttons) -->
+
+            <!-- === Linker Bereich === -->
+            <div class="left-section">
+                <!-- Logo, verlinkt zur Startseite -->
+                <a href="index.htm">
+                    <img class="poipedia-logo" src="media/icons/poipedia.png" alt="PoiPedia Logo">
+                </a>
+            </div>
+
+            <!-- === Mittlerer Bereich === -->
+            <div class="middle-section">
+                <!-- Google-Suchfeld mit Button -->
+                <input class="search-bar" type="text" id="searchInput" placeholder="Google suche">
+                <button class="search-button" onclick="performSearch()">
+                    <img class="search-icon" src="media/icons/search.svg" alt="Suchsymbol">
+                </button>
+            </div>
+
+            <!-- === Rechter Bereich === -->
+            <div class="right-section">
+                <!-- Zwei Buttons, die auf Unterseiten verlinken -->
+                 <div class="button-container">
+                    <button class="contact-button" onclick="window.location.href='contact.htm'">Contact</button>
+                    <button class="about-us-button" onclick="window.location.href='about_us.htm'">About Us</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== HAUPTINHALT ==================== -->
+    <div class="container">
+        <h1>Kontaktinformationen </h1>
+        <!-- Hauptüberschrift -->
+
+        <div class="Kontaktinformationen">
+            Kontaktinformationen: 
+            Helmut L.
+            <!-- Einfache Textinformation zu Kontaktperson -->
+        </div>
+
+        <!-- Container für das Kontaktformular -->
+        <div class="contact-form-container">
+            <h2>Kontaktformular</h2>
+            <!-- Unterüberschrift -->
+
+            <!-- Formular, das Daten via POST an backend/contact.php sendet -->
+            <form id="contactForm" action="backend/contact.php" method="POST" novalidate>
+                <!-- 'novalidate' deaktiviert Standardbrowser-Validierung, da JavaScript benutzt wird -->
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Ihr Name" required minlength="2" />
+                <!-- Eingabefeld für Name, mindestens 2 Zeichen -->
+
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
+                <!-- Eingabefeld für E-Mail-Adresse, Typ email prüft Format -->
+
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie hier Ihre Nachricht..." required minlength="10"></textarea>
+                <!-- Textbereich für Nachricht, mind. 10 Zeichen -->
+
+                <button type="submit">Absenden</button>
+                <!-- Absende-Button -->
+            </form>
+
+            <!-- Bereich für Feedback-Meldungen vom Formular (z.B. Erfolg, Fehler) -->
+            <div id="formMessage"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

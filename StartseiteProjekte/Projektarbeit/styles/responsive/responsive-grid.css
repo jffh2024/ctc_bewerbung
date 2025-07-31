@@ -1,0 +1,21 @@
+@media (max-width: 599px) {
+  .pic-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*=========================*/
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .pic-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*=========================*/
+
+@media (min-width: 1024px) {
+  .pic-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

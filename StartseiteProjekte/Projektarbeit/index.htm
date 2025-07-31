@@ -1,0 +1,244 @@
+<!DOCTYPE html> 
+<!-- Definiert den Dokumenttyp: HTML5. Wichtig, damit Browser die Seite korrekt interpretieren. -->
+
+<html lang="de">
+<head>
+
+    <title>PoiPedia</title>
+    <!-- Titel der Seite. Wird im Browser-Tab angezeigt. -->
+
+   
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Responsives Verhalten -->
+
+    <meta charset="utf-8">
+    <!-- Sorgt dafür, dass Buchstaben die Kodierung utf-8 damit Sonderzeichen 
+     angezeigt werden können (hier wichtig ä, ö, ü ß)-->
+     
+    <!-- ==================== CSS-STYLESHEETS ==================== -->
+
+    <!--================GEWÖHNLICHE CSS-STYLESHEETS ============== -->
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css"> <!-- Spezifisches Styling für den Header/Navigationsbereich -->
+    <link rel="stylesheet" href="styles/index.css"> <!-- Styling für die Startseite (z. B. Einleitung, Bilder-Grid) -->
+    
+    <!--====================Responsive CSS======================== -->
+     <link rel="stylesheet" href="styles/responsive/responsive-header.css">
+    <link rel="stylesheet" href="styles/responsive/responsive-grid.css">
+    <link rel="stylesheet" href="styles/responsive/responsive-general.css">
+
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+
+    <script src="scripts/google-suche.js" defer></script>
+    <!-- JavaScript-Datei für die Google-Suchfunktion. 'defer' bedeutet, dass das Skript erst geladen wird, wenn das HTML vollständig geparst ist. -->
+</head>
+
+
+<body>
+    <!-- Der sichtbare Inhalt der Website beginnt hier. -->
+
+    <!-- ==================== HEADER / NAVIGATION ==================== -->
+    <header class="header">
+        <!-- Oberer Seitenbereich – enthält Navigation und Logo -->
+
+        <nav class="topnav">
+            <!-- Horizontale Navigation am oberen Rand -->
+            <a href="index.htm">Startseite</a>
+            <a href="javascript.htm">JavaScript</a>
+            <a href="slideshow.htm">SlideShow</a>
+        </nav>
+
+        <nav class="main-nav">
+            <!-- Flexbox-Bereich mit drei Sektionen: links (Logo), Mitte (Suchfeld), rechts (Buttons) -->
+
+            <!-- === Linker Bereich === -->
+            <div class="left-section">
+                <!-- Logo, verlinkt zur Startseite -->
+                <a href="index.htm">
+                    <img class="poipedia-logo" src="media/icons/poipedia.png" alt="PoiPedia Logo">
+                </a>
+            </div>
+
+            <!-- === Mittlerer Bereich === -->
+            <div class="middle-section">
+                <!-- Google-Suchfeld mit Button -->
+                <input class="search-bar" type="text" id="searchInput" placeholder="Google suche">
+                <button class="search-button" onclick="performSearch()">
+                    <img class="search-icon" src="media/icons/search.svg" alt="Suchsymbol">
+                </button>
+            </div>
+
+            <!-- === Rechter Bereich === -->
+            <div class="right-section">
+                <!-- Zwei Buttons, die auf Unterseiten verlinken -->
+                 <div class="button-container">
+                    <button class="contact-button" onclick="window.location.href='contact.htm'">Contact</button>
+                    <button class="about-us-button" onclick="window.location.href='about_us.htm'">About Us</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== EINLEITUNGSTEXT ==================== -->
+    <main>
+        <!-- Hauptbereich der Webseite -->
+
+        <section class="intro">
+            
+            <h1 class="ex2_headline">Herzlich Willkommen bei PoiPedia.</h1>
+            
+
+            <p class="ex2_subheadline">Die Nachrichten zum Einschlafen</p>
+            
+
+            <p>
+                PoiPedia ist eine satirische Webseite, die einzig als Projekt für das Modul Webprogrammierung bei 
+                <a class="ex4_link" href="http://www.ctc-lohr.de" target="_blank">CTC-Lohr</a> dient. </br>
+                Schauen Sie auch <a class="ex4_link" href="hlmdl/index.html" target="_blank">hier.</a> die Seite wird stets erweitert werden.
+                
+            </p> 
+        </section>
+
+        <!-- ==================== BILDER-GRID ==================== -->
+        <section class="pic-grid">
+            <!-- Container für mehrere Bildkarten, im Grid-Layout -->
+
+            <!-- ==== Artikel 1 ==== -->
+            <article class="pic-preview">
+                <!-- Einzelkarte mit Bild, Autor, Titel etc. -->
+                <div class="thumbnail-row">
+                    <a href="https://de.wikipedia.org/wiki/Kartoffelsuppe" target="_blank">
+                        <img class="thumbnailkartoffelsuppe" src="media/thumbnails/kartoffelsuppe.webp" alt="Kartoffelsuppe">
+                    </a>
+                    <div class="info-src">Wikipedia</div>
+                </div>
+                <div class="pic-info-grid">
+                    <div class="profile-container">
+                        <a href="https://de.wikipedia.org/wiki/Angela_Merkel" target="_blank">
+                            <img class="profile-picture" src="media/profile-pictures/merkel.jpg" alt="Angela Merkel">
+                        </a>
+                    </div>
+                    <div class="pic-info">
+                        <p class="pic-title">Die Kartoffelsuppe ist eine gute Suppe.</p>
+                        <p class="author">Dr. Angela Merkel</p>
+                        <p class="statistik">23 views &#183; 43 years ago</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==== Artikel 2: Trump ==== -->
+            <article class="pic-preview">
+                <div class="thumbnail-row">
+                    <a href="https://de.wikipedia.org/wiki/The_Apprentice" target="_blank">
+                        <img class="thumbnailtrump" src="media/thumbnails/trump.jpg" alt="Trump Show">
+                    </a>
+                    <div class="info-src">Wikipedia</div>
+                </div>
+                <div class="pic-info-grid">
+                    <div class="profile-container">
+                        <a href="https://de.wikipedia.org/wiki/Donald_Trump" target="_blank">
+                            <img class="profile-picture" src="media/thumbnails/trump.jpg" alt="Donald Trump">
+                        </a>
+                    </div>
+                    <div class="pic-info">
+                        <p class="pic-title">Business is Business and Business is Business</p>
+                        <p class="author">President Donald J. Trump</p>
+                        <p class="statistik">195M views &#183; 5 days ago</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==== Artikel 3: Habeck ==== -->
+            <article class="pic-preview">
+                <div class="thumbnail-row">
+                    <a href="https://de.wikipedia.org/wiki/Wald" target="_blank">
+                        <img class="thumbnailhabeck" src="media/thumbnails/wald.jpg" alt="Waldlandschaft">
+                    </a>
+                    <div class="info-src">Wikipedia</div>
+                </div>
+                <div class="pic-info-grid">
+                    <div class="profile-container">
+                        <a href="https://wikipedia.de/wiki/Robert_Habeck" target="_blank">
+                            <img class="profile-picture" src="media/profile-pictures/habeck_bild.jpg" alt="Robert Habeck">
+                        </a>
+                    </div>
+                    <div class="pic-info">
+                        <p class="pic-title">Grün ist die Wiese und grün ist der Wald - Die besten Geschichten für Jung und Alt. (gelesen von Robrt H.)</p>
+                        <p class="author">Robert Habeck – Wirtschaftsminister a. D.</p>
+                        <p class="statistik">3 views &#183; 2 years ago</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==== Artikel 4: Macron ==== -->
+            <article class="pic-preview">
+                <div class="thumbnail-row">
+                    <a href="https://de.wikipedia.org/wiki/Rentenreform_in_Frankreich_2023" target="_blank">
+                        <img class="thumbnail" src="media/thumbnails/macron.jpg" alt="Lagerfeuer">
+                    </a>
+                    <div class="info-src">Wikipedia</div>
+                </div>
+                <div class="pic-info-grid">
+                    <div class="profile-container">
+                        <a href="https://de.wikipedia.org/wiki/Emmanuel_Macron" target="_blank">
+                            <img class="profile-picture" src="media/profile-pictures/macron.webp" alt="Emmanuel Macron">
+                        </a>
+                    </div>
+                    <div class="pic-info">
+                        <p class="pic-title">"Niemand hat vor das Rentenalter zu erhöhen"</p>
+                        <p class="author">Emanuel Macron - Präsident</p>
+                        <p class="statistik">40.8 Mio views &#183; 2 years ago</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==== Artikel 5: Amthor ==== -->
+            <article class="pic-preview">
+                <div class="thumbnail-row">
+                    <a href="https://de.wikipedia.org/wiki/Heute-show" target="_blank">
+                        <img class="thumbnail" src="media/thumbnails/amthor.jpg" alt="Heute Show">
+                    </a>
+                    <div class="info-src">Wikipedia</div>
+                </div>
+                <div class="pic-info-grid">
+                    <div class="profile-container">
+                        <a href="https://de.wikipedia.org/wiki/Philipp_Amthor" target="_blank">
+                            <img class="profile-picture" src="media/profile-pictures/amthor_philipp_gross.jpg" alt="Phillip Amthor">
+                        </a>
+                    </div>
+                    <div class="pic-info">
+                        <p class="pic-title">"Irgendwann moderiere ich die Heute-Show"</p>
+                        <p class="author">Philipp Amthor - MdB</p>
+                        <p class="statistik">12345 views &#183; 4 years ago</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ==== Artikel 6: Putin ==== -->
+            <article class="pic-preview">
+                <div class="thumbnail-row">
+                    <a href="https://de.wikipedia.org/wiki/Thermostatventil" target="_blank">
+                        <img class="thumbnailputin" src="media/thumbnails/Heizung-Putin-2.jpg" alt="Thermostat">
+                    </a>
+                    <div class="info-src">Wikipedia</div>
+                </div>
+                <div class="pic-info-grid">
+                    <div class="profile-container">
+                        <a href="https://de.wikipedia.org/wiki/Wladimir_Wladimirowitsch_Putin" target="_blank">
+                            <img class="profile-picture" src="media/profile-pictures/vova.jpg" alt="Vladimir Putin">
+                        </a>
+                    </div>
+                    <div class="pic-info">
+                        <p class="pic-title">"In Russland haben wir keine Heizungsthermostate."</p>
+                        <p class="author">Vladimir Putin – Präsident</p>
+                        <p class="statistik">2000 views &#183; 25 years ago</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<!-- Definiert den Dokumenttyp: HTML5. Wichtig, damit Browser die Seite korrekt interpretieren. -->
+
+<html lang="de">
+<!-- Öffnet das HTML-Dokument und legt die Sprache (Deutsch) fest. -->
+
+<head>
+    <!-- Enthält Meta-Informationen über das Dokument, die nicht direkt angezeigt werden. -->
+
+    <meta charset="UTF-8">
+    <!-- Stellt sicher, dass Umlaute und Sonderzeichen korrekt angezeigt werden. -->
+
+    <title>PoiPedia</title>
+    <!-- Titel der Seite. Wird im Browser-Tab angezeigt. -->
+
+   
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Responsives Verhalten: Skalierung passt sich der Bildschirmgröße an. Für mobile Geräte essenziell. -->
+
+    <meta charset="utf-8">
+    <!-- Sorgt dafür, dass Buchstaben die Kodierung utf-8 damit Sonderzeichen 
+     angezeigt werden können (hier wichtig ä, ö, ü ß)-->
+     
+    <!-- ==================== CSS-STYLESHEETS ==================== -->
+
+    <!--================GEWÖHNLICHE CSS-STYLESHEETS ============== -->
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css"> <!-- Spezifisches Styling für den Header/Navigationsbereich -->
+    <link rel="stylesheet" href="styles/index.css"> <!-- Styling für die Startseite (z. B. Einleitung, Bilder-Grid) -->
+    
+    <!--====================Responsive CSS======================== -->
+     <link rel="stylesheet" href="styles/responsive/responsive-header.css">
+    <link rel="stylesheet" href="styles/responsive/responsive-grid.css">
+    <link rel="stylesheet" href="styles/responsive/responsive-general.css">
+
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+
+    <script src="scripts/google-suche.js" defer></script>
+    <!-- JavaScript-Datei für die Google-Suchfunktion. 'defer' bedeutet, dass das Skript erst geladen wird, wenn das HTML vollständig geparst ist. -->
+</head>
+
+
+<body>
+    <!-- Der sichtbare Inhalt der Website beginnt hier. -->
+
+    <!-- ==================== HEADER / NAVIGATION ==================== -->
+    <header class="header">
+        <!-- Oberer Seitenbereich – enthält Navigation und Logo -->
+
+        <nav class="topnav">
+            <!-- Horizontale Navigation am oberen Rand -->
+            <a href="index.htm">Startseite</a>
+            <a href="javascript.htm">JavaScript</a>
+            <a href="slideshow.htm">SlideShow</a>
+        </nav>
+
+        <nav class="main-nav">
+            <!-- Flexbox-Bereich mit drei Sektionen: links (Logo), Mitte (Suchfeld), rechts (Buttons) -->
+
+            <!-- === Linker Bereich === -->
+            <div class="left-section">
+                <!-- Logo, verlinkt zur Startseite -->
+                <a href="index.htm">
+                    <img class="poipedia-logo" src="media/icons/poipedia.png" alt="PoiPedia Logo">
+                </a>
+            </div>
+
+            <!-- === Mittlerer Bereich === -->
+            <div class="middle-section">
+                <!-- Google-Suchfeld mit Button -->
+                <input class="search-bar" type="text" id="searchInput" placeholder="Google suche">
+                <button class="search-button" onclick="performSearch()">
+                    <img class="search-icon" src="media/icons/search.svg" alt="Suchsymbol">
+                </button>
+            </div>
+
+            <!-- === Rechter Bereich === -->
+            <div class="right-section">
+                <!-- Zwei Buttons, die auf Unterseiten verlinken -->
+                 <div class="button-container">
+                    <button class="contact-button" onclick="window.location.href='contact.htm'">Contact</button>
+                    <button class="about-us-button" onclick="window.location.href='about_us.htm'">About Us</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ==================== HAUPTINHALT ==================== -->
+
+    <main>
+
+        <section>
+            <h3>Über uns</h3>
+            <!-- Hauptüberschrift der Seite -->
+
+            <h2 class="ex2_subheadline">Unsere Mission</h2>
+            <p>Erfolgreicher Abschluss des Moduls Webprogrammierung.</p>
+        </section>
+
+    <br>
+
+        <section>    
+            <h2 class="ex2_subheadline">Unsere Werte</h2>
+            <ul>
+                <li><strong>HTML: </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inhalte</li>
+                <li><strong>CSS:  </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aussehen</li>
+                <li><strong>JavaScript:</strong> &nbsp;  Interaktivität</li>
+                <!-- Aufzählung wichtiger Technologien mit kurzen Erklärungen -->
+            </ul>
+        
+        </section>
+
+
+    </br>
+        <section>
+            <h2 class="ex2_subheadline">Unser Team</h2>
+            <ul>
+                <li><strong>Herr Helmut L.</strong> Webseitenersteller</li>
+                <!-- Teammitglieder mit Rollen -->
+            </ul>
+        </section>
+
+    </br>
+        <section>    
+        <h2 class="ex2_subheadline">Kontaktieren Sie uns</h2>
+            <p>Wenn Sie mehr über uns erfahren möchten, besuchen Sie unsere Kontaktseite 
+            oder senden Sie uns eine Nachricht. Wir freuen uns darauf, von Ihnen zu hören!
+                <a href="mailto:helmut-laemmle@web.de">helmut-laemmle@web.de</a>
+            </p>
+        </section>
+
+    </main>
+</body>
+
+</html>

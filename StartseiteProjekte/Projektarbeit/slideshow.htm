@@ -1,0 +1,143 @@
+<!DOCTYPE html> 
+
+
+<html lang="de">
+
+
+<head>
+   
+    <title>PoiPedia</title>
+    
+   
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Responsives Verhalten: Skalierung passt sich der Bildschirmgröße an. Für mobile Geräte essenziell. -->
+    <!-- Frage wann und ob das alleine ausreicht und wann man @media braucht noch nicht ganz klar. Wahrscheinlich
+     konkretes verhalten bei konkreter Größe (aber brauche ich das hier überhaupt noch?)-->
+    <meta charset="utf-8">
+    <!-- Sorgt dafür, dass Buchstaben die Kodierung utf-8 damit Sonderzeichen 
+     angezeigt werden können (hier wichtig ä, ö, ü ß)-->
+     
+    <!-- ==================== CSS-STYLESHEETS ==================== -->
+
+    <!--================GEWÖHNLICHE CSS-STYLESHEETS ============== -->
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css"> <!-- Spezifisches Styling für den Header/Navigationsbereich -->
+    <link rel="stylesheet" href="styles/index.css"> <!-- Styling für die Startseite (z. B. Einleitung, Bilder-Grid) -->
+    <link rel="stylesheet" href="styles/slideshow.css">
+    
+    <!--====================Responsive CSS======================== -->
+     <link rel="stylesheet" href="styles/responsive/responsive-header.css">
+    <link rel="stylesheet" href="styles/responsive/responsive-grid.css">
+    <link rel="stylesheet" href="styles/responsive/responsive-general.css">
+    <link rel="stylesheet" href="styles/responsive/responsive-slideshow.css">
+
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+
+    <script src="scripts/google-suche.js" defer></script>
+    <!-- JavaScript-Datei für die Google-Suchfunktion. 'defer' bedeutet, dass das Skript erst geladen wird, wenn das HTML vollständig geparst ist. -->
+    <script src="scripts/slideshow.js" defer ></script>
+</head>
+
+
+<body>
+    <!-- Der sichtbare Inhalt der Website beginnt hier. -->
+
+    <!-- ==================== HEADER / NAVIGATION ==================== -->
+    <header class="header">
+        <!-- Oberer Seitenbereich – enthält Navigation und Logo -->
+
+        <nav class="topnav">
+            <!-- Horizontale Navigation am oberen Rand -->
+            <a href="index.htm">Startseite</a>
+            <a href="javascript.htm">JavaScript</a>
+            <a href="slideshow.htm">SlideShow</a>
+        </nav>
+
+        <nav class="main-nav">
+            <!-- Flexbox-Bereich mit drei Sektionen: links (Logo), Mitte (Suchfeld), rechts (Buttons) -->
+
+            <!-- === Linker Bereich === -->
+            <div class="left-section">
+                <!-- Logo, verlinkt zur Startseite -->
+                <a href="index.htm">
+                    <img class="poipedia-logo" src="media/icons/poipedia.png" alt="PoiPedia Logo">
+                </a>
+            </div>
+
+            <!-- === Mittlerer Bereich === -->
+            <div class="middle-section">
+                <!-- Google-Suchfeld mit Button -->
+                <input class="search-bar" type="text" id="searchInput" placeholder="Google suche">
+                <button class="search-button" onclick="performSearch()">
+                    <img class="search-icon" src="media/icons/search.svg" alt="Suchsymbol">
+                </button>
+            </div>
+
+            <!-- === Rechter Bereich === -->
+            <div class="right-section">
+                <!-- Zwei Buttons, die auf Unterseiten verlinken -->
+                 <div class="button-container">
+                    <button class="contact-button" onclick="window.location.href='contact.htm'">Contact</button>
+                    <button class="about-us-button" onclick="window.location.href='about_us.htm'">About Us</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== MAIN ==================== -->
+    <main>
+      <h1 class="ex2_headline">Eine kleine Linksammlung</h1>
+
+       <div class="slideshow-wrapper">
+  <div class="slideshow-container">
+    <!----Slide 1-->
+    <div class="slide fade">
+      <div class="numbertext">1 / 3</div>
+      <div class="slide-content">
+        <a href="http://www.swp.de" target="_blank">
+        <img src="media/linkliste-pictures/swp.png" alt="swp">
+       </a>
+      </div>
+      <div class="text">Südwestpresse</div>
+    </div>
+<!--Slide 2-->
+    <div class="slide fade">
+      <div class="numbertext">2 / 3</div>
+      <div class="slide-content">
+        <a href="http://www.ctc-lohr.de" target="_blank">
+          <img src="media/linkliste-pictures/ctc.png" alt="CTC-Lohr">
+        </a>
+        </div>
+      <div class="text">CTC-Lohr</div>
+    </div>
+<!--Slide 3-->
+    <div class="slide fade">
+      <div class="numbertext">3 / 3</div>
+      <div class="slide-content">
+       <a href="http:\\www.spiegel.de" target="_blank"> 
+        <img src="media/linkliste-pictures/der_Spiegel_2022_logo.svg.png" alt="Der Spiegel">
+      </a>
+      </div>
+      <div class="text">Der Spiegel</div>
+    </div>
+
+    <!--Pfeile vor und zurück-->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+<!--Punkte 1 Punkt je slide -->
+  <div class="dots-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+
+
+    </main>
+
+</body>
+</html>

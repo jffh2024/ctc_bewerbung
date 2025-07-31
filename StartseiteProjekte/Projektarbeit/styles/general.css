@@ -1,0 +1,133 @@
+/* Grundlegende Einstellungen für den gesamten Body (die ganze Seite) */
+body {
+    font-family: Arial, Helvetica, sans-serif;     /* Schriftart: Arial, alternativ jede serifenlose Schrift */
+    line-height: 1.6;                   /* Zeilenhöhe für bessere Lesbarkeit */
+    background-color: #f5f5f5;          /* Hellgrauer Hintergrund für die Seite */
+    color: black;                        /* Dunkelgraue Schriftfarbe für guten Kontrast */
+  
+}
+
+main{                        
+    padding-left: 20px; 
+    padding-right: 20px;              
+
+}
+
+
+
+/* Container zur Begrenzung des Inhalts und optischen Abgrenzung */
+
+/* Überschriftenfarben */
+h1, h2, h3 {
+    color: #444;                      /* Dunkelgraue Farbe für Überschriften, etwas heller als Textfarbe */
+}
+
+/* Listen ohne Aufzählungszeichen */
+ul {
+    list-style-type: none;            /* Entfernt die Standard-Aufzählungszeichen */
+    padding: 0;                      /* Entfernt Standard-Innenabstand bei Listen */
+}
+
+/* Abstand zwischen Listenelementen */
+li {
+    margin: 10px 0;                   /* Vertikaler Abstand von 10 Pixeln zwischen den Listenelementen */
+}
+
+
+/* Stil für alle <p>-Elemente */
+
+/* Allgemeine Absatz-Formatierung */
+p {
+    font-family: Arial, Helvetica, sans-serif; /* Schriftart Arial für alle <p>-Elemente */
+    font-size: 16px;          /* Schriftgröße 16 Pixel */
+    color: black;             /* Textfarbe schwarz */
+}
+
+/* Beispiel 1: große fette Überschrift für alle class="ex1" */
+.ex1_b_headline {
+    font-family: Arial, Helvetica, sans-serif;      /* Schriftart Arial, wenn nicht verfügbar ... */
+    font-weight: bold;        /* Fettdruck */
+    font-size: 32px;          /* Große Schriftgröße */
+}
+
+/* Beispiel 2: Überschrift für Section */
+.ex2_headline {
+    font-family: Arial, Helvetica, sans-serif;     /* Schriftart Verdana */
+    font-weight: bold;        /* Fettdruck */
+    font-size: 20px;          /* Schriftgröße 20 Pixel */
+    margin-bottom: 15px;      /* Abstand nach unten */
+}
+
+/* Beispiel 2: Unterüberschrift */
+.ex2_subheadline {
+    font-family: Arial, Helvetica, sans-serif;     /* Schriftart Verdana */
+    font-weight: bold;       /* Standard-Schriftgewicht (nicht fett) */
+    font-size: 18px;          /* Schriftgröße 16 Pixel */
+    color: gray;              /* Graue Schriftfarbe */
+    margin-top: 0px;          /* Kein Abstand nach oben */
+    margin-bottom: 8px;       /* Abstand nach unten */
+}
+
+/* Beispiel 2: Fließtext */
+.ex2_text {
+    font-family: Verdana;     /* Schriftart Verdana */
+    font-size: 12px;          /* Schriftgröße 12 Pixel */
+    font-weight: unset;       /* Normalgewicht */
+    margin-top: 0px;          /* Kein Abstand oben */
+    margin-bottom: 15px;      /* Abstand nach unten */
+    width: 95%;               /* Breite fast komplett (95%) */
+    line-height: 17px;        /* Zeilenhöhe für bessere Lesbarkeit */
+}
+
+/* Beispiel 3: große fette Überschrift */
+.ex3_headline {
+    font-weight: bold;        /* Fettdruck */
+    font-size: 40px;          /* Sehr große Schrift */
+    margin-bottom: 10px;      /* Abstand nach unten */
+}
+
+/* Beispiel 3: Unterüberschrift mit Stil */
+.ex3_subheadline {
+    font-size: bold;          /* Achtung: font-size: bold ist ungültig, sollte font-weight sein! */
+    font-style: italic;       /* Kursivschrift */
+    color: red;               /* Rote Schriftfarbe */
+}
+
+/* Beispiel 4: große Überschrift, zentriert */
+.ex4_headline {
+    font-size: 36px;          /* Große Schrift */
+    text-align: center;       /* Text zentriert */
+    margin-bottom: 25px;      /* Abstand nach unten */
+    margin-top: 0px;          /* Kein Abstand nach oben */
+}
+
+/* Beispiel 4: Unterüberschrift, zentriert */
+.ex4_subheadline {
+    font-size: 22px;          /* Mittlere Schriftgröße */
+    font-weight: unset;       /* Normalgewicht */
+    text-align: center;       /* Zentriert */
+}
+
+/* Beispiel 4: Link-Stil */
+.ex4_link {
+    color: blue;              /* Blaue Schriftfarbe */
+    text-align: center;       /* Zentriert (funktioniert nur bei Block-Elementen) */
+    font-size: 16px;          /* Kleine Schrift */
+    text-decoration: none;    /* Kein Unterstrich */
+    cursor: pointer;          /* Maus zeigt Hand (klickbar) */
+}
+
+/* Beispiel 4: Hover-Effekt für Links */
+.ex4_link:hover {
+    text-decoration: underline; /* Unterstrich beim Hover */
+    cursor: pointer;             /* Hand-Cursor */
+}
+
+
+
+/* Container-Klasse, die häufig als Wrapper genutzt wird */
+.container {
+  width: 100%;                 /* Container nimmt immer die volle verfügbare Breite ein */
+  padding: 0 15px;             /* Innenabstand links und rechts von je 15 Pixel */
+  box-sizing: border-box;      /* Padding und Border werden zur Gesamtbreite hinzugerechnet, was das Layout stabiler macht */
+}

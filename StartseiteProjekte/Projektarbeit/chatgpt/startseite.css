@@ -1,0 +1,104 @@
+.pic-preview {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.thumbnail-row {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto; /* Optional: feste Höhe, z. B. height: 200px; für object-fit */
+  /* object-fit: cover;  --> Nur nötig bei fester Höhe */
+}
+
+.thumbnailkartoffelsuppe {
+  width:81%;      /* Bild wird auf 50% der Breite seines Containers verkleinert */
+  height: auto;    /* Seitenverhältnis bleibt erhalten */
+  display: block;  /* Entfernt mögliche unerwünschte Leerzeichen unter dem Bild */
+  margin-left: auto;  /* Links automatisch Abstand */
+  margin-right: auto; /* Rechts automatisch Abstand */
+}
+
+.thumbnailtrump {
+  width: 48%;      /* Bild wird auf 50% der Breite seines Containers verkleinert */
+  height: auto;    /* Seitenverhältnis bleibt erhalten */
+  display: block;  /* Entfernt mögliche unerwünschte Leerzeichen unter dem Bild */
+  margin-left: auto;  /* Links automatisch Abstand */
+  margin-right: auto; /* Rechts automatisch Abstand */
+}
+
+.thumbnailhabeck {
+  width: 60%;      /* Bild wird auf 50% der Breite seines Containers verkleinert */
+  height: auto;    /* Seitenverhältnis bleibt erhalten */
+  display: block;  /* Entfernt mögliche unerwünschte Leerzeichen unter dem Bild */
+  margin-left: auto;  /* Links automatisch Abstand */
+  margin-right: auto; /* Rechts automatisch Abstand */
+}
+
+.thumbnailputin {
+  width: 85%;      /* Bild wird auf 50% der Breite seines Containers verkleinert */
+  height: auto;    /* Seitenverhältnis bleibt erhalten */
+  display: block;  /* Entfernt mögliche unerwünschte Leerzeichen unter dem Bild */
+  margin-left: auto;  /* Links automatisch Abstand */
+  margin-right: auto; /* Rechts automatisch Abstand */
+}
+
+.info-src {
+  font-family: Roboto, Arial;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px;
+  border-radius: 2px;
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 8px;
+  right: 5px;
+}
+
+.pic-info-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+
+.pic-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.profile-picture {
+  width: 40px;
+  border-radius: 50px;
+}
+
+/* Optional: falls du div und img unterschiedlich benennen willst */
+/* 
+.profile-container {
+  width: 40px;
+}
+*/
+
+.author,
+.statistik {
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+}
+
+.author {
+  margin-bottom: 4px;
+}
+
+.pic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+/* Entfernt: .pic-flex, da ungenutzt */
