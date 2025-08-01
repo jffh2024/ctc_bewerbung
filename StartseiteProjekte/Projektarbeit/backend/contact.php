@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.web.de';                 // SMTP-Host
         $mail->SMTPAuth = true;                     // Authentifizierung aktivieren
-        $mail->Username = 'helmut-laemmle@web.de';  // SMTP-Benutzername
-        $mail->Password = 'NP4RIY46TT3KJ5ODP6LE';   // SMTP-Passwort (hier Beispiel)
+        $mail->Username = '';                       // SMTP-Benutzername
+        $mail->Password = '';                       // SMTP-Passwort 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Verschlüsselung
         $mail->Port = 587;                           // Port
 
