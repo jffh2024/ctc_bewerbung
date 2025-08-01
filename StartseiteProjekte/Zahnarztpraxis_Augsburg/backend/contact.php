@@ -41,8 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $mail->Host = 'sandbox.smtp.mailtrap.io';
             $mail->SMTPAuth = true;
             $mail->Port = 2525;
-            $mail->Username = '5c2f51c72e969a';
-            $mail->Password = 'acebaa27698ad3';                  // Port
+            $mail->Username = '';
+            $mail->Password = '';                  // Port
 
         // 5. Absender und Empfänger festlegen
         $mail->setFrom('helmut-laemmle@web.de', 'Kontaktformular');   // Nutzer Kontaktformular
