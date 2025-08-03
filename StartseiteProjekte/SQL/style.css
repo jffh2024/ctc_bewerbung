@@ -1,0 +1,134 @@
+/* ================================
+   Basis-Styles für die gesamte Seite
+================================== */
+body {
+  margin: 0; /* Entfernt Standard-Abstand des Browsers */
+  font-family: Arial, sans-serif; /* Schriftart */
+  background: #f5f5f5; /* Hellgrauer Hintergrund */
+  color: #333; /* Dunkelgraue Schriftfarbe */
+}
+
+/* ================================
+   Allgemeine Link-Stile
+================================== */
+a {
+  color: inherit; /* Erbt die Textfarbe vom Elternelement */
+  text-decoration: none; /* Kein Unterstreichen */
+}
+
+a:visited {
+  color: inherit; /* Verlinkter Text bleibt gleichfarbig, auch wenn besucht */
+  text-decoration: none; /* Kein Unterstreichen für besuchte Links */
+}
+
+/* ================================
+   Header-Bereich
+================================== */
+header {
+  background: #4a90e2; /* Blaues Hintergrund (leichtes Flat-Design) */
+  color: #fff; /* Weißer Text */
+  padding: 1rem; /* Innenabstand oben/unten/rechts/links */
+  text-align: center; /* Zentrierter Text */
+}
+
+/* ================================
+   Container (Layout-Struktur)
+================================== */
+.container {
+  display: flex; /* Flexbox für horizontale Anordnung */
+  flex-wrap: wrap; /* Zeilenumbruch bei kleineren Bildschirmen */
+  min-height: 100vh; /* Mindestens Höhe des sichtbaren Bereichs */
+}
+
+/* ================================
+   Sidebar (Navigationsbereich)
+================================== */
+.sidebar {
+  background: #2c3e50; /* Dunkles Blau/Grau als Hintergrund */
+  color: #ecf0f1; /* Helles Grau für den Text */
+  padding: 1rem; /* Innenabstand */
+  min-width: 200px; /* Mindestbreite der Sidebar */
+  flex: 1; /* Flex-Wert 1 = nimmt minimalen Platz ein */
+}
+
+.sidebar h2 {
+  font-size: 1.2rem; /* Etwas kleinere Überschrift */
+  margin-top: 0; /* Kein oberer Abstand */
+}
+
+.sidebar ul {
+  list-style: none; /* Keine Aufzählungspunkte */
+  padding: 0; /* Kein Innenabstand */
+}
+
+.sidebar li {
+  margin: 0.5rem 0; /* Abstand zwischen den einzelnen Listenpunkten */
+}
+
+/* ================================
+   Content-Bereich (Hauptinhalt)
+================================== */
+.content {
+  background: #fff; /* Weißer Hintergrund */
+  padding: 2rem; /* Innenabstand für Lesbarkeit */
+  flex: 4; /* Flex-Wert 4 = nimmt den Großteil des Platzes ein */
+}
+
+.content h1 {
+  margin-top: 0; /* Kein Abstand nach oben */
+}
+
+.content p {
+  font-size: 14px; /* Kleinere Schriftgröße für Fließtext */
+}
+
+.content a {
+  font-size: 14px; /* Konsistente Schriftgröße für Links */
+  color: blue; /* Blaue Links im Content */
+}
+
+/* ================================
+   Responsive Design (für kleine Bildschirme)
+================================== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Anordnung untereinander auf kleineren Bildschirmen */
+  }
+
+  .sidebar {
+    flex: none; /* Sidebar nimmt nur den nötigen Platz ein */
+  }
+}
+
+/* ================================
+   <pre>-Element (z. B. für Codeblöcke)
+================================== */
+pre {
+  text-align: left; /* Linksbündiger Text */
+  white-space: pre-wrap; /* Zeilen umbrechen bei langen Inhalten */
+  word-wrap: break-word; /* Lange Wörter umbrechen */
+  overflow-x: auto; /* Horizontal scrollen, falls nötig */
+   border-radius: 8px; /* Abgerundete Ecken */
+  max-width: 100%; /* Nicht über Containerbreite hinaus */
+  box-sizing: border-box; /* Padding wird in Gesamtbreite einberechnet */
+}
+
+/* Zusätzliche Formatierung für <pre> in .container */
+.container pre {
+  text-align: left;
+}
+
+/* ================================
+   Konsolen-Ausgabe-Stil
+================================== */
+.console {
+  background-color: #000; /* Schwarzer Hintergrund wie bei alten Konsolen */
+  color: #0f0; /* Grüne Schrift wie bei Terminals */
+  font-family: monospace; /* Schriftart wie in echten Konsolen */
+  padding: 1em; /* Innenabstand */
+  border-radius: 8px; /* Abgerundete Ecken */
+  white-space: pre-wrap; /* Zeilen umbrechen */
+  word-wrap: break-word; /* Lange Zeichenketten umbrechen */
+  overflow-x: auto; /* Falls Inhalt zu breit ist: horizontal scrollen */
+  text-align: left;
+}

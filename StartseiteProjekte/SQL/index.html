@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Dokumenttyp: HTML5; Sprache: Deutsch -->
+
+<head>
+    <meta charset="UTF-8" /> <!-- Zeichencodierung: UTF-8 für Umlaute usw. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsives Layout für mobile Geräte -->
+    <title>SQL</title> <!-- Titel der Seite (wird im Browser-Tab angezeigt) -->
+
+    <!-- CSS Dateien -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Highlight.js-Stylesheet für Syntaxhervorhebung -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>SQL</h1>
+        <p>Structured Query Language</p>
+    </header>
+
+    <main>
+        <div class="container"> <!-- Wrapper für Seitenlayout -->
+
+            <div class="sidebar"> <!-- Seitenleiste -->
+                <h2>Themenseiten</h2>
+                <ul>
+                    <li><a href="index.html">SQL</a></li>
+                    
+
+                
+            </div>
+
+            <div class="content"> <!-- Hauptinhaltsbereich -->
+
+                <p>
+                    Hier wird mit Hilfe von SQL-Befehlen nach und nach eine Datenbank erstellt und Abfragen gestellt.
+                  <br>
+                    Das Hauptanliegen dieser Seite liegt vorerst auf dem Layout und nicht auf dem Inhalt.
+                   
+                </p>
+  
+                <span>#1</span>
+<!-- Erstellt eine neue Datenbank mit dem Namen 'zeugnis' -->
+<!-- SQL-Codeblock 1: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+create database zeugnis;
+</code></pre>
+
+<!-- Konsolenausgabe 1: Datenbank erstellen -->
+<div class="console">
+MariaDB [(none)]> create database zeugnis;
+Query OK, 1 row affected (0.004 sec)
+</div>
+
+<span>#2</span>
+<!-- Versuch, die Datenbank 'zeugnis' zu erstellen (führt zu einem Fehler, wenn sie schon existiert) -->
+<!-- SQL-Codeblock 2: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+create database zeugnis;
+</code></pre>
+
+<!-- Konsolenausgabe 2: Datenbank auswählen -->
+<div class="console">
+MariaDB [(none)]> create database zeugnis;
+ERROR 1007 (HY000): Can't create database 'zeugnis'; database exists
+</div>
+
+<span>#3</span>
+<!-- Erstellt die Datenbank 'zeugnis' nur, falls sie noch nicht existiert -->
+<!-- SQL-Codeblock 3: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+create database if not exists zeugnis;
+</code></pre>
+
+<!-- Konsolenausgabe 3: Datenbank erstellen -->
+<div class="console">
+MariaDB [(none)]> create database if not exists zeugnis;
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+</div>
+
+<span>#4</span>
+<!-- Zeigt die zuletzt aufgetretenen Warnungen (z. B. nach CREATE DATABASE IF NOT EXISTS) -->
+<!-- SQL-Codeblock 4: Warnungen anzeigen -->
+<pre><code class="language-sql">
+--SQL-Code
+show warnings;
+</code></pre>
+
+<!-- Konsolenausgabe 4: Warnungen anzeigen -->
+<div class="console">
+MariaDB [(none)]> show warnings;
++-------+------+--------------------------------------------------+
+| Level | Code | Message                                          |
++-------+------+--------------------------------------------------+
+| Note  | 1007 | Can't create database 'zeugnis'; database exists |
++-------+------+--------------------------------------------------+
+1 row in set (0.002 sec)
+</div>
+
+<span>#5</span>
+<!-- Löscht die Datenbank 'zeugnis' (falls vorhanden) -->
+<!-- SQL-Codeblock 5: Datenbank löschen -->
+<pre><code class="language-sql">
+--SQL-Code
+drop database zeugnis;
+</code></pre>
+
+<!-- Konsolenausgabe 5: Datenbank löschen -->
+<div class="console">
+MariaDB [(none)]> drop database zeugnis;
+Query OK, 0 rows affected (0.008 sec)
+</div>
+
+<span>#6</span>
+<!-- Erstellt eine neue Datenbank mit dem Namen 'zeugnis' -->
+<!-- SQL-Codeblock 6: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+create database zeugnis;
+</code></pre>
+
+<!-- Konsolenausgabe 6: Datenbank auswählen -->
+<div class="console">
+MariaDB [(none)]> create database zeugnis;
+Query OK, 1 row affected (0.002 sec)
+</div>
+
+<span>#7</span>
+<!-- Erstellt eine neue Datenbank mit dem Namen 'fi242' -->
+<!-- SQL-Codeblock 7: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+create database fi242;
+</code></pre>
+
+<!-- Konsolenausgabe 7: Datenbank erstellen -->
+<div class="console">
+MariaDB [(none)]> create database fi242;
+Query OK, 1 row affected (0.002 sec)
+</div>
+
+<span>#8</span>
+<!-- Zeigt alle Tabellen der aktuell ausgewählten Datenbank an -->
+<!-- SQL-Codeblock 8: Alle Tabellen anzeigen lassen -->
+<pre><code class="language-sql">
+--SQL-Code
+show tables;
+</code></pre>
+
+<!-- Konsolenausgabe 8: Alle Tabellen anzeigen lassen -->
+<div class="console">
+MariaDB [fi242]> show tables;
+Empty set (0.002 sec)
+</div>
+
+<span>#9</span>
+<!-- Erstellt eine Tabelle 'kunde' mit mehreren Feldern und einem Primärschlüssel -->
+<!-- SQL-Codeblock 9: Tabelle erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+create table kunde
+    -> ( kundeID int unsigned not null auto_increment,
+    ->   vorname varchar(45) not null,
+    ->   nachname varchar(45) not null,
+    ->   strasse varchar(45),
+    ->   plz char(5) not null default '89231',
+    ->   ort varchar(45) not null default 'Neu-Ulm',
+    ->   primary key (kundeID)
+    -> );
+</code></pre>
+
+<!-- Konsolenausgabe 9: Tabelle erstellen -->
+<div class="console">
+MariaDB [fi242]> create table kunde
+    -> ( kundeID int unsigned not null auto_increment,
+    ->   vorname varchar(45) not null,
+    ->   nachname varchar(45) not null,
+    ->   strasse varchar(45),
+    ->   plz char(5) not null default '89231',
+    ->   ort varchar(45) not null default 'Neu-Ulm',
+    ->   primary key (kundeID)
+    -> );
+Query OK, 0 rows affected (0.034 sec)
+</div>
+
+<span>#10</span>
+<!-- Fügt einen Datensatz in die Tabelle 'kunde' ein (alle Felder werden explizit angegeben) -->
+<!-- SQL-Codeblock 10: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+insert into kunde
+-> values
+-> (2, 'Helmut', 'Kohl', 'Petrusplatz 1', '89077', 'Ulm');
+</code></pre>
+
+<!-- Konsolenausgabe 10: Datenbank auswählen -->
+<div class="console">
+MariaDB [fi242]> insert into kunde
+    -> values
+    -> (2, 'Helmut', 'Kohl', 'Petrusplatz 1', '89077', 'Ulm');
+Query OK, 1 row affected (0.006 sec)
+</div>
+
+<span>#11</span>
+<!-- Gibt alle Datensätze aus der Tabelle 'kunde' aus -->
+<!-- SQL-Codeblock 11: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+select * from kunde;
+</code></pre>
+
+<!-- Konsolenausgabe 11: Datenbank erstellen -->
+<div class="console">
+MariaDB [fi242]> select * from kunde;
++---------+---------+----------+---------------+-------+-----+
+| kundeID | vorname | nachname | strasse       | plz   | ort |
++---------+---------+----------+---------------+-------+-----+
+|       2 | Helmut  | Kohl   | Petrusplatz 1 | 89077 | Ulm |
++---------+---------+----------+---------------+-------+-----+
+1 row in set (0.001 sec)
+</div>
+
+<span>#12</span>
+<!-- Fügt einen Datensatz in die Tabelle 'kunde' ein (nur einige Spalten werden angegeben, Rest: Default) -->
+<!-- SQL-Codeblock 12: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+insert into kunde
+    -> (vorname, nachname, strasse)
+    -> values
+    -> ('Helmut', 'Kohl', 'Petrusplatz 1');
+</code></pre>
+
+<!-- Konsolenausgabe 12: Datenbank auswählen -->
+<div class="console">
+MariaDB [fi242]> insert into kunde
+    -> (vorname, nachname, strasse)
+    -> values
+    -> ('Helmut', 'Kohl', 'Petrusplatz 1');
+Query OK, 1 row affected (0.003 sec)
+</div>
+
+<span>#13</span>
+<!-- Gibt alle Datensätze aus der Tabelle 'kunde' aus -->
+<!-- SQL-Codeblock 13: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+select * from kunde;
+</code></pre>
+
+<!-- Konsolenausgabe 13: Datenbank erstellen -->
+<div class="console">
+MariaDB [fi242]> select * from kunde;
++---------+---------+----------+---------------+-------+---------+
+| kundeID | vorname | nachname | strasse       | plz   | ort     |
++---------+---------+----------+---------------+-------+---------+
+|       2 | Helmut  | Kohl   | Petrusplatz 1 | 89077 | Ulm     |
+|       3 | Helmut  | Kohl   | Petrusplatz 1 | 89231 | Neu-Ulm |
++---------+---------+----------+---------------+-------+---------+
+2 rows in set (0.001 sec)
+</div>
+
+<span>#14</span>
+<!-- Führt das SQL-Skript 'create_kunde.sql' aus (z. B. zum Erstellen oder Befüllen der Tabelle 'kunde') -->
+<!-- SQL-Codeblock 14: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+source create_kunde.sql
+</code></pre>
+
+<!-- Konsolenausgabe 14: Datenbank auswählen -->
+<div class="console">
+MariaDB [fi242]> source create_kunde.sql
+Database changed
+Query OK, 0 rows affected (0.015 sec)
+
+Query OK, 0 rows affected (0.011 sec)
+
+Query OK, 0 rows affected (0.011 sec)
+
+Query OK, 0 rows affected (0.012 sec)
+
+ERROR 1366 (22007): Incorrect string value: '\xE9' for column `fi242`.`kunde`.`vorname` at row 1
+ERROR 1366 (22007): Incorrect string value: '\xE4mmle' for column `fi242`.`kunde`.`nachname` at row 1
+</div>
+
+<span>#15</span>
+<!-- Gibt alle Datensätze aus der Tabelle 'kunde' aus (nach Ausführung des Skripts vermutlich leer) -->
+<!-- SQL-Codeblock 15: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+select * from kunde;
+</code></pre>
+
+<!-- Konsolenausgabe 15: Datenbank erstellen -->
+<div class="console">
+MariaDB [fi242]> select * from kunde;
+Empty set (0.000 sec)
+</div>
+
+<span>#16</span>
+<!-- Fügt einen Datensatz in die Tabelle 'kunde' ein; einige Felder bekommen Standardwerte (z. B. plz) -->
+<!-- SQL-Codeblock 16: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+insert into kunde
+    -> values
+    -> (NULL ,'André', 'Rieu', 'Bahnhofstr. 1', default, 'Amsterdam');
+</code></pre>
+
+<!-- Konsolenausgabe 16: Datenbank auswählen -->
+<div class="console">
+MariaDB [fi242]> insert into kunde
+    -> values
+    -> (NULL ,'André', 'Rieu', 'Bahnhofstr. 1', default, 'Amsterdam');
+Query OK, 1 row affected (0.002 sec)
+</div>
+
+<span>#17</span>
+<!-- Fügt einen weiteren Datensatz in die Tabelle 'kunde' ein (nutzt nur bestimmte Spalten, Rest: Default) -->
+<!-- SQL-Codeblock 17: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+insert into kunde
+    -> (vorname, nachname, strasse)
+    -> values
+    -> ('Helmut', 'Kohl', 'Petrusplatz 1');
+</code></pre>
+
+<!-- Konsolenausgabe 17: Datenbank erstellen -->
+<div class="console">
+MariaDB [fi242]> insert into kunde
+    -> (vorname, nachname, strasse)
+    -> values
+    -> ('Helmut', 'Kohl', 'Petrusplatz 1');
+Query OK, 1 row affected (0.002 sec)
+</div>
+
+<span>#18</span>
+<!-- Gibt alle Datensätze aus der Tabelle 'kunde' aus -->
+<!-- SQL-Codeblock 18: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+select * from kunde;
+</code></pre>
+
+<!-- Konsolenausgabe 18: Datenbank auswählen -->
+<div class="console">
+MariaDB [fi242]> select * from kunde;
++---------+---------+----------+---------------+-------+---------+
+| kundeID | vorname | nachname | strasse       | plz   | ort     |
++---------+---------+----------+---------------+-------+---------+
+|       1 | André   | Rieu | Bahnhofstr. 1 | 89231 | Amsterdam   |
+|       2 | Helmut  | Kohl   | Petrusplatz 1 | 89231 | Neu-Ulm |
++---------+---------+----------+---------------+-------+---------+
+2 rows in set (0.000 sec)
+</div>
+
+<span>#19</span>
+<!-- Zeigt den aktuellen Status der Datenbank-Verbindung und Sitzung an -->
+<!-- SQL-Codeblock 19: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+status
+</code></pre>
+
+<!-- Konsolenausgabe 19: Datenbank erstellen -->
+<div class="console">
+--------------
+Connection id:		4
+Current database:	fi242
+Current user:		root@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		'20250703.txt'
+Using delimiter:	;
+Server:			MariaDB
+Server version:		10.11.7-MariaDB mariadb.org binary distribution
+Protocol version:	10
+Connection:		localhost via TCP/IP
+Insert id:		2
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+TCP port:		3306
+Uptime:			1 hour 25 min 22 sec
+
+Threads: 1  Questions: 47  Slow queries: 0  Opens: 24  Open tables: 14  Queries per second avg: 0.009
+--------------
+</div>
+
+<span>#20</span>
+<!-- Führt das SQL-Skript 'create_kunde.sql' erneut aus (z. B. zum Wiederherstellen oder Auffüllen der Datenbank) -->
+<!-- SQL-Codeblock 20: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+source create_kunde.sql
+</code></pre>
+
+<!-- Konsolenausgabe 20: Datenbank auswählen -->
+<div class="console">
+MariaDB [fi242]> source create_kunde.sql
+Database changed
+Query OK, 0 rows affected (0.013 sec)
+
+Query OK, 0 rows affected (0.015 sec)
+
+Query OK, 0 rows affected (0.014 sec)
+
+Query OK, 0 rows affected (0.012 sec)
+
+Query OK, 1 row affected (0.003 sec)
+
+Query OK, 1 row affected (0.002 sec)
+</div>
+
+<span>#21</span>
+<!-- Gibt das aktuelle Datum und die aktuelle Uhrzeit des Servers aus -->
+<!-- SQL-Codeblock 21: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+select now();
+</code></pre>
+
+<!-- Konsolenausgabe 21: Datenbank erstellen -->
+<div class="console">
+MariaDB [fi242]> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2025-07-03 09:04:16 |
++---------------------+
+1 row in set (0.001 sec)
+</div>
+
+<span>#22</span>
+<!-- Gibt das aktuelle Datum des Servers aus (ohne Uhrzeit) -->
+<!-- SQL-Codeblock 22: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+select curdate();
+</code></pre>
+
+<!-- Konsolenausgabe 22: Datenbank auswählen -->
+<div class="console">
+MariaDB [fi242]> select curdate();
++------------+
+| curdate()  |
++------------+
+| 2025-07-03 |
++------------+
+1 row in set (0.000 sec)
+</div>
+
+<span>#23</span>
+<!-- Führt das SQL-Skript 'create_kunde.sql' aus -->
+<!-- SQL-Codeblock 23: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+source create_kunde.sql
+</code></pre>
+
+<!-- Konsolenausgabe 23: Datenbank erstellen -->
+<div class="console">
+MariaDB [fi242]> source create_kunde.sql
+Database changed
+Query OK, 0 rows affected (0.014 sec)
+
+Query OK, 0 rows affected (0.013 sec)
+
+Query OK, 0 rows affected (0.011 sec)
+
+Query OK, 0 rows affected (0.011 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 2 rows affected (0.001 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected, 1 warning (0.003 sec)
+Records: 3  Duplicates: 0  Warnings: 1
+</div>
+
+<span>#24</span>
+<!-- Gibt alle Datensätze aus der Tabelle 'kunde' aus -->
+<!-- SQL-Codeblock 24: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+MariaDB [fi242]> select * from kunde;
+</code></pre>
+
+<!-- Konsolenausgabe 24: Datenbank auswählen -->
+<div class="console">
+MariaDB [fi242]> select * from kunde;
++---------+---------+----------+-----------------+-------+---------+
+| kundeID | vorname | nachname | strasse         | plz   | ort     |
++---------+---------+----------+-----------------+-------+---------+
+|       1 | André   | Rieu | Bahnhofstr. 1   | 89231 | Amsterdam   |
+|       2 | Helmut  | Kohl   | Petrusplatz 1   | 89231 | Neu-Ulm |
+|       3 | Andrea  | Müller   | Münsterplatz 1  | 89231 | Neu-Ulm |
++---------+---------+----------+-----------------+-------+---------+
+3 rows in set (0.000 sec)
+</div>
+
+<span>#25</span>
+<!-- Gibt alle Datensätze aus der Tabelle 'rechnung' aus -->
+<!-- SQL-Codeblock 25: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+select * from rechnung;
+</code></pre>
+
+<!-- Konsolenausgabe 25: Datenbank erstellen -->
+<div class="console">
+MariaDB [fi242]> select * from rechnung;
++------------+------------+--------+---------+
+| rechnungID | datum      | betrag | kundeID |
++------------+------------+--------+---------+
+|         11 | 2025-01-30 |  51.44 |       2 |
+|         12 | 2025-07-03 |  39.99 |       1 |
+|         13 | 2025-07-03 | 123.45 |       2 |
++------------+------------+--------+---------+
+3 rows in set (0.001 sec)
+</div>
+
+<span>#26</span>
+<!-- Führt das SQL-Skript 'create_zeugnis.sql' zweimal aus (z. B. um Tabellen zu erstellen und zu befüllen) -->
+<!-- SQL-Codeblock 26: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+source create_zeugnis.sql;
+source create_zeugnis.sql;
+</code></pre>
+
+<!-- Konsolenausgabe 26: Datenbank auswählen -->
+<div class="console">
+MariaDB [fi242]> source create_zeugnis.sql
+MariaDB [fi242]> source create_zeugnis.sql
+Query OK, 0 rows affected (0.047 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Database changed
+Query OK, 0 rows affected (0.013 sec)
+</div>
+
+<span>#27</span>
+<!-- Zeigt alle Tabellen der aktuell ausgewählten Datenbank an (hier vermutlich nur 'klasse') -->
+<!-- SQL-Codeblock 27: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+show tables;
+</code></pre>
+
+<!-- Konsolenausgabe 27: Datenbank erstellen -->
+<div class="console">
+MariaDB [zeugnis]> show tables;
++-------------------+
+| Tables_in_zeugnis |
++-------------------+
+| klasse            |
++-------------------+
+1 row in set (0.001 sec)
+</div>
+
+<span>#28</span>
+<!-- Zeigt die Struktur (Spalten und Typen) der Tabelle 'klasse' an -->
+<!-- SQL-Codeblock 28: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+describe klasse;
+</code></pre>
+
+<!-- Konsolenausgabe 28: Datenbank auswählen -->
+<div class="console">
+MariaDB [zeugnis]> describe klasse;
++---------------+----------------------+------+-----+---------+-------+
+| Field         | Type                 | Null | Key | Default | Extra |
++---------------+----------------------+------+-----+---------+-------+
+| KlasseID      | smallint(5) unsigned | NO   | PRI | NULL    |       |
+| Stufe         | char(3)              | NO   |     | 11a     |       |
+| Klassenlehrer | varchar(45)          | NO   |     | N.      |       |
++---------------+----------------------+------+-----+---------+-------+
+3 rows in set (0.031 sec)
+</div>
+
+<span>#29</span>
+<!-- Lädt Daten aus der Datei 'klasse.csv' in die Tabelle 'klasse', Felder werden durch ';' getrennt -->
+<!-- SQL-Codeblock 29: Datenbank erstellen -->
+<pre><code class="language-sql">
+--SQL-Code
+load data local infile 'klasse.csv'
+    into table klasse
+    fields terminated by ';' 
+    ;
+</code></pre>
+
+<!-- Konsolenausgabe 29: Datenbank erstellen -->
+<div class="console">
+MariaDB [zeugnis]> load data local infile 'klasse.csv'
+    -> into table klasse
+    -> fields terminated by ';' 
+    -> ;
+Query OK, 4 rows affected, 3 warnings (0.004 sec)
+Records: 4  Deleted: 0  Skipped: 0  Warnings: 3
+</div>
+
+<span>#30</span>
+<!-- Führt das SQL-Skript 'create_zeugnis.sql' aus (z. B. für neue Tabellen oder Inserts) -->
+<!-- SQL-Codeblock 30: Datenbank auswählen -->
+<pre><code class="language-sql">
+--SQL-Code
+source create_zeugnis.sql
+</code></pre>
+
+<!-- Konsolenausgabe 30: Datenbank auswählen -->
+<div class="console">
+MariaDB [zeugnis]> source create_zeugnis.sql
+Query OK, 1 row affected (0.025 sec)
+
+Query OK, 1 row affected (0.003 sec)
+
+Database changed
+Query OK, 0 rows affected (0.011 sec)
+</div>
+
+
+
+ 
+
+
+
+
+                <!-- Highlight.js-Skripte zum Aktivieren der Syntaxhervorhebung -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+                <script>
+                    hljs.highlightAll(); // Automatische Hervorhebung aller <code>-Blöcke
+                </script>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
