@@ -218,7 +218,7 @@ MariaDB [fi242]> select * from kunde;
 +---------+---------+----------+---------------+-------+-----+
 | kundeID | vorname | nachname | strasse       | plz   | ort |
 +---------+---------+----------+---------------+-------+-----+
-|       2 | Helmut  | Kohl   | Petrusplatz 1 | 89077 | Ulm |
+|       2 | Helmut  | Kohl     | Petrusplatz 1 | 89077 | Ulm |
 +---------+---------+----------+---------------+-------+-----+
 1 row in set (0.001 sec)
 </div>
@@ -257,8 +257,8 @@ MariaDB [fi242]> select * from kunde;
 +---------+---------+----------+---------------+-------+---------+
 | kundeID | vorname | nachname | strasse       | plz   | ort     |
 +---------+---------+----------+---------------+-------+---------+
-|       2 | Helmut  | Kohl   | Petrusplatz 1 | 89077 | Ulm     |
-|       3 | Helmut  | Kohl   | Petrusplatz 1 | 89231 | Neu-Ulm |
+|       2 | Helmut  | Kohl     | Petrusplatz 1 | 89077 | Ulm     |
+|       3 | Helmut  | Kohl     | Petrusplatz 1 | 89231 | Neu-Ulm |
 +---------+---------+----------+---------------+-------+---------+
 2 rows in set (0.001 sec)
 </div>
@@ -350,12 +350,12 @@ select * from kunde;
 <!-- Konsolenausgabe 18: Datenbank auswählen -->
 <div class="console">
 MariaDB [fi242]> select * from kunde;
-+---------+---------+----------+---------------+-------+---------+
-| kundeID | vorname | nachname | strasse       | plz   | ort     |
-+---------+---------+----------+---------------+-------+---------+
-|       1 | André   | Rieu | Bahnhofstr. 1 | 89231 | Amsterdam   |
-|       2 | Helmut  | Kohl   | Petrusplatz 1 | 89231 | Neu-Ulm |
-+---------+---------+----------+---------------+-------+---------+
++---------+---------+----------+---------------+-------+----------+
+| kundeID | vorname | nachname | strasse       | plz   | ort      |
++---------+---------+----------+---------------+-------+----------+
+|       1 | André   | Rieu     | Bahnhofstr. 1 | 89231 | Amsterdam|
+|       2 | Helmut  | Kohl     | Petrusplatz 1 | 89231 | Neu-Ulm  |
++---------+---------+----------+---------------+-------+----------+
 2 rows in set (0.000 sec)
 </div>
 
@@ -496,13 +496,13 @@ MariaDB [fi242]> select * from kunde;
 <!-- Konsolenausgabe 24: Datenbank auswählen -->
 <div class="console">
 MariaDB [fi242]> select * from kunde;
-+---------+---------+----------+-----------------+-------+---------+
-| kundeID | vorname | nachname | strasse         | plz   | ort     |
-+---------+---------+----------+-----------------+-------+---------+
-|       1 | André   | Rieu | Bahnhofstr. 1   | 89231 | Amsterdam   |
-|       2 | Helmut  | Kohl   | Petrusplatz 1   | 89231 | Neu-Ulm |
-|       3 | Andrea  | Müller   | Münsterplatz 1  | 89231 | Neu-Ulm |
-+---------+---------+----------+-----------------+-------+---------+
++---------+---------+----------+-----------------+-------+----------+
+| kundeID | vorname | nachname | strasse         | plz   | ort      |
++---------+---------+----------+-----------------+-------+----------+
+|       1 | André   | Rieu     | Bahnhofstr. 1   | 89231 | Amsterdam|
+|       2 | Helmut  | Kohl     | Petrusplatz 1   | 89231 | Neu-Ulm  |
+|       3 | Andrea  | Müller   | Münsterplatz 1  | 89231 | Neu-Ulm  |
++---------+---------+----------+-----------------+-------+----------+
 3 rows in set (0.000 sec)
 </div>
 
